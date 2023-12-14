@@ -37,15 +37,7 @@ function App() {
   }
   // basic all functionality completed here
 
-
-
   // now start local-storage ki functionality
-   // set todos at use-effects
-   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos))
-  }, [todos]);
-
-
   // get todos at use-effects
   useEffect(() => {
     // first
@@ -57,6 +49,11 @@ function App() {
 
   }, []); //3rd []
  
+// set todos at use-effects
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos))
+  }, [todos]);
+
   return (
     <TodoProvider value={{ todos, addTodo, updatedTodo, deleteTodo, toggleComplete }}>
       <div className="bg-[#172842] min-h-screen py-8">

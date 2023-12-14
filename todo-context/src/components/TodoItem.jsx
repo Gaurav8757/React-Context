@@ -7,7 +7,7 @@ function TodoItem({ todo }) {
 const [isTodoEditable, setIsTodoEditable] = useState(false);
 const [todoMsg, setTodoMsg] = useState(todo.todo);
 const {updatedTodo, deleteTodo, toggleComplete} = useTodo();
-
+// change state edit show after edited
 const editTodo  = ()=>{
     updatedTodo(todo.id, {...todo, todo: todoMsg})
     setIsTodoEditable(false);
@@ -46,7 +46,7 @@ const toggleCompleted = ()=>{
 
                     if (isTodoEditable) {
                         editTodo();
-                    } else setIsTodoEditable((prev) => !prev);
+                    } else setIsTodoEditable((prev) =>  !prev);
                 }}
                 disabled={todo.completed}
             >
